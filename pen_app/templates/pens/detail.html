@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Pen Details</h1>
+
+<div class='card'>
+    <div class='card-content'>
+        <span class='card-title'>{{pen.color}} {{pen.brand}}</span>
+        <h6>Tip Size: {{pen.tip_width}}</h6>
+        <h6>Tip Type: {{pen.tip_type}}</h6>
+        <h6>Number Owned: {{pen.number_owned}}</h6>
+    </div>
+</div>
+
+{% endblock %}
