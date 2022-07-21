@@ -10,6 +10,10 @@
         <h6>Tip Type: {{pen.tip_type}}</h6>
         <h6>Number Owned: {{pen.number_owned}}</h6>
     </div>
+    <div class='card-action'>
+        <a href="{% url 'pens_update' pen.id %}">Edit</a>
+        <a href="{% url 'pens_delete' pen.id %}">Delete</a>
+    </div>
 </div>
 
 {% endblock %}

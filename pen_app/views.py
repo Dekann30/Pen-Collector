@@ -1,5 +1,19 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Pen
+
+class PenCreate(CreateView):
+    model = Pen
+    fields = '__all__'
+    success_url = '/pens/'
+
+class PenUpdate(UpdateView):
+    model = Pen
+    fields = ['number_owned',]
+
+class PenDelete(DeleteView):
+    model = Pen
+    success_url = '/pens/'
 
 # Create your views here.
 def home(request):
