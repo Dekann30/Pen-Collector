@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Bins</h1>
+
+{% for bin in bins %}
+    <div class='card'>
+        <a href='{% url 'detail' bin.id %}'>
+            <div class='card-content'>
+                <span class='card-title'>{{bin.size}} {{bin.shape}} </span>
+                <p>Location: {{bin.room}} {{bin.shelving_unit}} shelf</p>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+
+{% endblock %}

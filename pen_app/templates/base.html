@@ -15,12 +15,21 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;PenCollector</a></li>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;BinCollector</a></li>
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'pens_create' %}">Add a Pen</a></li>
-          <li><a href="{% url 'index' %}">All Pens</a></li>
+          {% if user.is_authenticated %}
+            <li><h5>Hello {{user.username}}!</h5></li>
+            <li><a href="{% url 'bins_create' %}">Add a Bin</a></li>
+            <li><a href="{% url 'index' %}">All Bins</a></li>
+            <li><a href="{% url 'labels_index' %}">All Labels</a></li>
+            <li><a href="{% url 'labels_create' %}">Add a Label</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
@@ -30,7 +39,7 @@
     {% endblock %}
   </main>
   <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2022 Pen Collector &nbsp;</div>
+    <div class="right">All Rights Reserved, &copy; 2022 Bin Collector &nbsp;</div>
   </footer>
 </body>
 </html>

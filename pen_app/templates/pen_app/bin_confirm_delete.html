@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Remove Bin from Apartment</h1>
+
+    <h4>Aww did the <span class='teal-text'>{{object.size}} {{object.shape}}</span> break?</h4>
+
+    <form action='' method='POST'>
+        {% csrf_token %}
+        <input type='submit' value='Yes (T-T) - Remove from Apartment' class='btn'>
+        <a href={% url 'detail' bin.id %}>Cancel</a>
+    </form>
+{% endblock %}
